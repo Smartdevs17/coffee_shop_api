@@ -8,6 +8,8 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import * as dotenv from 'dotenv';
 import { ConfigModule } from '@nestjs/config';
+import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 dotenv.config()
 @Module({
@@ -16,7 +18,7 @@ dotenv.config()
     ConfigModule.forRoot({
       isGlobal: true
     }),
-    ChefModule, SubmenuModule, BlogModule, MenuModule],
+    ChefModule, SubmenuModule, BlogModule, MenuModule, AuthModule, UserModule],
   controllers: [AppController],
   providers: [AppService],
 })
